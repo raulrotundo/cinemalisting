@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button, Container, Header, Icon, Segment } from 'semantic-ui-react';
+import MostPopularMoviesContainer from './most-popular-movies/most-popular-movies-container';
 
 const HomeComponent = () => {
   return (
@@ -29,16 +30,8 @@ const HomeComponent = () => {
           </Button>
         </Container>
       </Segment>
-      <Segment style={{ padding: '8em 0em' }} vertical>
-        <Container text>
-          <Header as='h3' style={{ fontSize: '2em' }}>Breaking The Grid, Grabs Your Attention</Header>
-          <p style={{ fontSize: '1.33em' }}>
-            Instead of focusing on content creation and hard work, we have learned how to master the art of doing
-              nothing by providing massive amounts of whitespace and generic content that can seem massive, monolithic
-              and worth your attention.
-            </p>
-          <Button as='a' size='large'>Read More</Button>
-        </Container>
+      <Segment style={{ padding: '4em 0em' }} vertical>
+        <MostPopularMoviesContainer />
       </Segment>
     </div>
   );
