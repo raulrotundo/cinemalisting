@@ -15,7 +15,9 @@ const HeaderComponent = () => (
           {process.env.REACT_APP_WEBSITE_NAME}
         </Menu.Item>
         <Menu.Item>
-          <Search />
+          <Search
+            placeholder="Search"
+          />
         </Menu.Item>
         <Menu.Menu position='right'>
           <Menu.Item className='item'>
