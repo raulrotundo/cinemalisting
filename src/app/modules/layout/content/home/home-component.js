@@ -1,8 +1,9 @@
 import React from 'react';
 import { Button, Container, Header, Icon, Segment } from 'semantic-ui-react';
-import MostPopularMoviesContainer from './most-popular-movies/most-popular-movies-container';
+import SliderContainer from './slider/slider-container';
 
-const HomeComponent = () => {
+const HomeComponent = (props) => {
+  const { settings } = props;
   return (
     <div>
       <Segment
@@ -31,7 +32,7 @@ const HomeComponent = () => {
         </Container>
       </Segment>
       <Segment style={{ padding: '4em 0em' }} vertical>
-        <MostPopularMoviesContainer />
+        <SliderContainer settings={settings} title="Most Popular Movies" />
       </Segment>
     </div>
   );
