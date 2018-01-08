@@ -31,7 +31,7 @@ const HomeComponent = (props) => {
           </Button>
         </Container>
       </Segment>
-      <Segment style={{ padding: '4em 0em' }} vertical>
+      <Segment vertical>
         <SliderContainer settings={settings} title="Most Popular Movies" />
       </Segment>
     </div>
