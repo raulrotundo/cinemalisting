@@ -1,0 +1,2 @@
+// Slider
+export const SET_SLIDER_SETTINGS='SET_SLIDER_SETTINGS'
