@@ -38,17 +38,10 @@ const SliderComponent = (props) => {
       imgSrc: 'http://via.placeholder.com/143x231'
     }
   ];
-  var divStyle = {
-    slickPrev: {
-      before: {
-        color: 'black'
-      }
-    }
-  };
   return (
     <Container>
       <h2>{title}</h2>
-      <Slider {...settings} style={divStyle}>
+      <Slider {...settings}>
         {sliderInfo.map((slider) =>
           <div key={slider.id}>
             <h3>
