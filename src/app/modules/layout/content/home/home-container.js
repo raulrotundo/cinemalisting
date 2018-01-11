@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { getMovies } from 'redux/actions/home';
 import HomeComponent from './home-component';
-import MostPopularMoviesMock from 'mock/most-popular-movies.json';
 
 class HomeContainer extends Component {
 
@@ -13,15 +12,20 @@ class HomeContainer extends Component {
 
   componentWillMount() {
     this.getMovies('mostPopularMovies', { sort_by: 'popularity.desc' });
+    this.getMovies('moviesInTheaters', {
+      'primary_release_date.gte': '2014-09-15',
+      'primary_release_date.lte': '2014-10-22'
+    });
   }
 
   getMovies(content, params) {
-    console.log(this.props.getMovies(content, params));
+    this.props.getMovies(content, params);
   }
 
   render() {
     return <HomeComponent
-      mostPopularMovies={MostPopularMoviesMock}
+      mostPopularMovies={this.props.mostPopularMovies}
+      moviesInTheaters={this.props.moviesInTheaters}
     />;
   }
 }

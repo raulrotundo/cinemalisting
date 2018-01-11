@@ -22,6 +22,11 @@ export function setMovies(content, data) {
         type: types.SET_MOST_POPULAR_MOVIES,
         data
       }
+      case 'moviesInTheaters':
+      return {
+        type: types.SET_MOVIES_IN_THEATERS,
+        data
+      }  
     default: return false;
   }
 }
