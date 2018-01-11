@@ -11,7 +11,7 @@ const SliderComponent = (props) => {
         {sliderData.map((slider) =>
           <div key={slider.id}>
             <h3>
-              <Image src={'https://image.tmdb.org/t/p/w185_and_h278_bestv2' + slider.poster_path} rounded />
+              <Image src={process.env.REACT_APP_POSTER_PATH + slider.poster_path} rounded />
             </h3>
           </div>
         )}
