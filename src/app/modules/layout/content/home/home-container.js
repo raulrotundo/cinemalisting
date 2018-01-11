@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import moment from 'moment';
 import { getMovies } from 'redux/actions/home';
 import HomeComponent from './home-component';
 
@@ -11,10 +12,14 @@ class HomeContainer extends Component {
   }
 
   componentWillMount() {
-    this.getMovies('mostPopularMovies', { sort_by: 'popularity.desc' });
+    // Most Popular Movies
+    this.getMovies('mostPopularMovies', {
+      sort_by: 'popularity.desc'
+    });
+    // In Theaters movies
     this.getMovies('moviesInTheaters', {
-      'primary_release_date.gte': '2014-09-15',
-      'primary_release_date.lte': '2014-10-22'
+      'primary_release_date.gte': moment().subtract(1, 'year').format('YYYY-MM-DD'),
+      'primary_release_date.lte': moment().format('YYYY-MM-DD')
     });
   }
 
