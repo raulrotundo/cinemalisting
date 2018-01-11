@@ -22,11 +22,16 @@ export function setMovies(content, data) {
         type: types.SET_MOST_POPULAR_MOVIES,
         data
       }
-      case 'moviesInTheaters':
+    case 'moviesInTheaters':
       return {
         type: types.SET_MOVIES_IN_THEATERS,
         data
-      }  
+      }
+    case 'commingSoonMovies':
+      return {
+        type: types.SET_COMMING_SOON_MOVIES,
+        data
+      }
     default: return false;
   }
 }

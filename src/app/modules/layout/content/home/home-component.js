@@ -6,7 +6,8 @@ const HomeComponent = (props) => {
   const {
     settings,
     mostPopularMovies,
-    moviesInTheaters
+    moviesInTheaters,
+    commingSoonMovies
   } = props;
   return (
     <div>
@@ -43,6 +44,11 @@ const HomeComponent = (props) => {
       {moviesInTheaters &&
         <Segment vertical>
           <SliderContainer settings={settings} title="In Theaters" sliderData={moviesInTheaters} />
+        </Segment>
+      }
+      {commingSoonMovies &&
+        <Segment vertical>
+          <SliderContainer settings={settings} title="Comming Soon" sliderData={commingSoonMovies} />
         </Segment>
       }
     </div>

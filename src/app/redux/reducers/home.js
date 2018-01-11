@@ -3,6 +3,7 @@ import * as types from 'constants/actionTypes';
 const initialState = {
   mostPopularMovies: [],
   moviesInTheaters: [],
+  commingSoonMovies: [],
   errors: {
     msg: ''
   }
@@ -27,6 +28,11 @@ export default (state = initialState, action = {}) => {
           ...state.errors,
           msg: action.errMsg
         }
+      }
+    case types.SET_COMMING_SOON_MOVIES:
+      return {
+        ...state,
+        commingSoonMovies: action.data
       }
     default: return state;
   }

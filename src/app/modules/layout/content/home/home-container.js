@@ -22,6 +22,11 @@ class HomeContainer extends Component {
       'primary_release_date.gte': moment().subtract(1, 'year').format('YYYY-MM-DD'),
       'primary_release_date.lte': moment().format('YYYY-MM-DD')
     });
+    // Comming Soon (Movies within a month forward from tomorrow date)
+    this.getMovies('commingSoonMovies', {
+      'primary_release_date.gte': moment().add(1, 'days').format('YYYY-MM-DD'),
+      'primary_release_date.lte': moment().add(1, 'month').format('YYYY-MM-DD')
+    });
   }
 
   getMovies(content, params) {
@@ -32,13 +37,15 @@ class HomeContainer extends Component {
     return <HomeComponent
       mostPopularMovies={this.props.mostPopularMovies}
       moviesInTheaters={this.props.moviesInTheaters}
+      commingSoonMovies={this.props.commingSoonMovies}
     />;
   }
 }
 
 HomeContainer.propTypes = {
   mostPopularMovies: PropTypes.array.isRequired,
-  moviesInTheaters: PropTypes.array.isRequired
+  moviesInTheaters: PropTypes.array.isRequired,
+  commingSoonMovies: PropTypes.array.isRequired
 };
 
 const mapStateToProps = state => {
