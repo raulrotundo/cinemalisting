@@ -9,6 +9,7 @@ class SliderContainer extends Component {
     return <SliderComponent
       settings={this.props.settings}
       title={this.props.title}
+      sliderData={this.props.sliderData}
     />;
   }
 }

@@ -1,16 +1,14 @@
 import React from 'react';
 import { Container, Image } from 'semantic-ui-react';
 import Slider from 'react-slick';
-import MostPopularMoviesMock from 'mock/most-popular-movies.json';
 
 const SliderComponent = (props) => {
-  const { settings, title } = props;
-  const sliderInfo = MostPopularMoviesMock;
+  const { settings, title, sliderData } = props;
   return (
     <Container>
       <h2>{title}</h2>
       <Slider {...settings}>
-        {sliderInfo.map((slider) =>
+        {sliderData.map((slider) =>
           <div key={slider.id}>
             <h3>
               <Image src={slider.imgSrc} as='a' href='http://google.com' rounded />

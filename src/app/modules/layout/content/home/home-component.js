@@ -3,7 +3,7 @@ import { Button, Container, Header, Icon, Segment } from 'semantic-ui-react';
 import SliderContainer from './slider/slider-container';
 
 const HomeComponent = (props) => {
-  const { settings } = props;
+  const { settings, mostPopularMovies } = props;
   return (
     <div>
       <Segment
@@ -31,9 +31,11 @@ const HomeComponent = (props) => {
           </Button>
         </Container>
       </Segment>
-      <Segment vertical>
-        <SliderContainer settings={settings} title="Most Popular Movies" />
-      </Segment>
+      {mostPopularMovies &&
+        <Segment vertical>
+          <SliderContainer settings={settings} title="Most Popular Movies" sliderData={mostPopularMovies} />
+        </Segment>
+      }
     </div>
   );
 }
