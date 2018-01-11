@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import moment from 'moment';
 import { getMovies } from 'redux/actions/home';
 import HomeComponent from './home-component';
@@ -34,6 +35,11 @@ class HomeContainer extends Component {
     />;
   }
 }
+
+HomeContainer.propTypes = {
+  mostPopularMovies: PropTypes.array.isRequired,
+  moviesInTheaters: PropTypes.array.isRequired
+};
 
 const mapStateToProps = state => {
   return state.home;
