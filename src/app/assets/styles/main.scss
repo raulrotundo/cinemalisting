@@ -1,2 +1,6 @@
 /* Hacking slick arrows color */
 .slick-prev:before, .slick-next:before { color: black; }
+.slick-slide {
+  margin-right: 10px;
+  margin-left: 10px;
+}
