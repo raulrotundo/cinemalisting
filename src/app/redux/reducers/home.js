@@ -4,6 +4,7 @@ const initialState = {
   mostPopularMovies: [],
   moviesInTheaters: [],
   commingSoonMovies: [],
+  highestRatedMovies: [],
   errors: {
     msg: ''
   }
@@ -33,6 +34,11 @@ export default (state = initialState, action = {}) => {
       return {
         ...state,
         commingSoonMovies: action.data
+      }
+    case types.SET_HIGHEST_RATED_MOVIES:
+      return {
+        ...state,
+        highestRatedMovies: action.data
       }
     default: return state;
   }

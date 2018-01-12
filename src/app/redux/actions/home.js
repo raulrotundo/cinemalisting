@@ -32,6 +32,11 @@ export function setMovies(content, data) {
         type: types.SET_COMMING_SOON_MOVIES,
         data
       }
+    case 'highestRatedMovies':
+      return {
+        type: types.SET_HIGHEST_RATED_MOVIES,
+        data
+      }
     default: return false;
   }
 }

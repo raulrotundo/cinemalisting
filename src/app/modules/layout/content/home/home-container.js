@@ -13,20 +13,25 @@ class HomeContainer extends Component {
   }
 
   componentWillMount() {
-    // Most Popular Movies
+    /** Most Popular Movies */
     this.getMovies('mostPopularMovies', {
       sort_by: 'popularity.desc'
     });
-    // In Theaters movies
+    /** In Theaters movies */
     this.getMovies('moviesInTheaters', {
       'primary_release_date.gte': moment().subtract(1, 'year').format('YYYY-MM-DD'),
       'primary_release_date.lte': moment().format('YYYY-MM-DD')
     });
-    // Comming Soon (Movies within a month forward from tomorrow date)
+    /** Comming Soon (Movies within a month forward from tomorrow date) */
     this.getMovies('commingSoonMovies', {
       'primary_release_date.gte': moment().add(1, 'days').format('YYYY-MM-DD'),
       'primary_release_date.lte': moment().add(1, 'month').format('YYYY-MM-DD')
     });
+    /** Highest rate movies used at the top of the home page */
+    this.getMovies('highestRatedMovies', {
+      sort_by: 'vote_average.desc',
+      primary_release_year: '2018',
+    })
   }
 
   getMovies(content, params) {
@@ -38,6 +43,7 @@ class HomeContainer extends Component {
       mostPopularMovies={this.props.mostPopularMovies}
       moviesInTheaters={this.props.moviesInTheaters}
       commingSoonMovies={this.props.commingSoonMovies}
+      highestRatedMovies={this.props.highestRatedMovies}
     />;
   }
 }
@@ -45,7 +51,8 @@ class HomeContainer extends Component {
 HomeContainer.propTypes = {
   mostPopularMovies: PropTypes.array.isRequired,
   moviesInTheaters: PropTypes.array.isRequired,
-  commingSoonMovies: PropTypes.array.isRequired
+  commingSoonMovies: PropTypes.array.isRequired,
+  highestRatedMovies: PropTypes.array.isRequired
 };
 
 const mapStateToProps = state => {
