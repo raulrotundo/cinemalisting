@@ -31,6 +31,13 @@
     "build": "npm-run-all build-css build-js",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "heroku-postbuild": "npm run build"
+    "heroku-postbuild": "npm run build",
+    "coverage": "react-scripts test --env=jsdom --coverage && node ./node_modules/http-server/bin/http-server -c-1 -o -p 9875 ./coverage/lcov-report/"
+  },
+  "devDependencies": {
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "http-server": "^0.11.1",
+    "react-test-renderer": "^16.2.0"
   }
 }
