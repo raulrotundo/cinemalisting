@@ -1,9 +1,9 @@
 import * as types from 'constants/actionTypes';
-import fetch from 'services/fetch-wrapper';
+import http from 'services/axiosconfig';
 
 export function getMovies(content, params) {
   return dispatch => {
-    return fetch.get('/discover/movie', { params: params }).then(res => {
+    return http.get('/discover/movie', { params: params }).then(res => {
       dispatch(setMovies(content, res.data.results))
     }).catch((err) => {
       if (!err.response) {
