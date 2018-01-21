@@ -78,4 +78,35 @@ describe('Home actions', () => {
       done();
     });
   });
+
+  it('Should return a 404 not found if url request it is not valid', function (done) {
+    moxios.wait(() => {
+      const request = moxios.requests.mostRecent();
+      request.respondWith({
+        status: 404,
+        response: {
+          status_code: 34,
+          status_message: 'The resource you requested could not be found.',
+          success: false
+        }
+      });
+    });
+
+    const expectedActions = {
+      type: 'SET_GET_MOVIES_ERROR',
+      params: {
+        sort_by: 'popularity.desc'
+      },
+      errMsg: 'The resource you requested could not be found.'
+    };
+
+    let store = mockStore(initialState);
+
+    return store.dispatch(actions.getMovies('mostPopularMoviesX', {
+      sort_by: 'popularity.desc'
+    })).then(() => {
+      expect(store.getActions()[0]).toEqual(expectedActions);
+      done();
+    });
+  });
 });
