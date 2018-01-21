@@ -6,11 +6,7 @@ export function getMovies(content, params) {
     return http.get('/discover/movie', { params: params }).then(res => {
       dispatch(setMovies(content, res.data.results))
     }).catch((err) => {
-      if (!err.response) {
-        dispatch(setGetMoviesError(params, { msg: 'Network Error' }));
-      } else {
-        dispatch(setGetMoviesError(params, err.response.data.status_message));
-      }
+      dispatch(setGetMoviesError(params, err.response.data.status_message));
     });
   }
 }
