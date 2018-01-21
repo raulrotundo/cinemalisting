@@ -9,7 +9,6 @@ import MostPopularMoviesMock from 'mock/most-popular-movies.json';
 
 const middlewares = [thunk];
 const mockStore = configureStore(middlewares);
-const store = mockStore(initialState);
 
 describe('Home actions', () => {
 
@@ -19,7 +18,7 @@ describe('Home actions', () => {
 
   afterEach(function () {
     moxios.uninstall(instance);
-  })
+  });
 
   it('Should create an action to set a movie error', () => {
     const params = [];
@@ -55,7 +54,7 @@ describe('Home actions', () => {
     expect(actions.setMovies('', data)).toEqual(false);
   });
 
-  it('GET discover/movie request should return Movie data', function () {
+  it('GET discover/movie request should return Movie data', function (done) {
     moxios.wait(() => {
       const request = moxios.requests.mostRecent();
       request.respondWith({
@@ -70,10 +69,13 @@ describe('Home actions', () => {
       data
     };
 
+    let store = mockStore(initialState);
+
     return store.dispatch(actions.getMovies('mostPopularMovies', {
       sort_by: 'popularity.desc'
     })).then(() => {
       expect(store.getActions()[0]).toEqual(expectedActions);
+      done();
     });
   });
 });
