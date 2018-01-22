@@ -1,5 +1,5 @@
 import * as types from 'constants/actionTypes';
-import http from 'services/axiosconfig';
+import http from 'services/axios-wrapper';
 
 export function getMovies(content, params) {
   return dispatch => {

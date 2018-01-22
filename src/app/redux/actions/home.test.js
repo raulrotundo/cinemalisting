@@ -1,7 +1,7 @@
 import * as types from 'constants/actionTypes';
 import configureStore from 'redux-mock-store';
 import moxios from 'moxios';
-import instance from 'services/axiosconfig'
+import instance from 'services/axios-wrapper';
 import thunk from 'redux-thunk';
 import * as actions from './home';
 import { initialState } from 'redux/reducers/home';
