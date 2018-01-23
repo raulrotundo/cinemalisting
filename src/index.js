@@ -7,7 +7,7 @@ import 'semantic-ui-css/semantic.min.css';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import 'assets/styles/main.css'
-import LayoutComponent from 'modules/layout/layout-component';
+import LayoutComponent from 'components/layout/layout-component';
 
 ReactDOM.render((
   <Provider store={store}>

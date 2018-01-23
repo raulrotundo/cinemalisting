@@ -1,8 +1,8 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import HeaderContainer from './header/header-container';
-import HomeContainer from 'modules/layout/content/home/home-container';
-import FooterContainer from 'modules/layout/footer/footer-container';
+import HomeContainer from 'components/layout/content/home/home-container';
+import FooterContainer from 'components/layout/footer/footer-container';
 
 const LayoutComponent = () => {
   return (
