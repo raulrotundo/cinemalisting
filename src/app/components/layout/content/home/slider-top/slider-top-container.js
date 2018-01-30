@@ -6,10 +6,14 @@ import SliderTopComponent from './slider-top-component';
 class SliderTopContainer extends Component {
 
   render() {
-    return <SliderTopComponent
-      settings={this.props.settingsTop}
-      sliderData={this.props.sliderData}
-    />;
+    return (
+      <div>
+        <SliderTopComponent
+          settings={this.props.settingsTop}
+          sliderData={this.props.sliderData}
+        />
+      </div>
+    );
   }
 }
 
