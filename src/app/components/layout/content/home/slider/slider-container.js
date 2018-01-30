@@ -6,11 +6,15 @@ import SliderComponent from './slider-component';
 class SliderContainer extends Component {
 
   render() {
-    return <SliderComponent
-      settings={this.props.settings}
-      title={this.props.title}
-      sliderData={this.props.sliderData}
-    />;
+    return (
+      <div>
+        <SliderComponent
+          settings={this.props.settings}
+          title={this.props.title}
+          sliderData={this.props.sliderData}
+        />
+      </div>
+    );
   }
 }
 
