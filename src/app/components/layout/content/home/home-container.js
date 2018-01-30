@@ -39,12 +39,16 @@ class HomeContainer extends Component {
   }
 
   render() {
-    return <HomeComponent
-      mostPopularMovies={this.props.mostPopularMovies}
-      moviesInTheaters={this.props.moviesInTheaters}
-      commingSoonMovies={this.props.commingSoonMovies}
-      highestRatedMovies={this.props.highestRatedMovies}
-    />;
+    return (
+      <div>
+        <HomeComponent
+          mostPopularMovies={this.props.mostPopularMovies}
+          moviesInTheaters={this.props.moviesInTheaters}
+          commingSoonMovies={this.props.commingSoonMovies}
+          highestRatedMovies={this.props.highestRatedMovies}
+        />
+      </div>
+    );
   }
 }
 
