@@ -13,7 +13,7 @@ const HomeComponent = (props) => {
   } = props;
   return (
     <div>
-    <Segment
+      <Segment
         inverted
         style={{ minHeight: 420, paddingTop: 100 }}
       >
