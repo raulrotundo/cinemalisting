@@ -1,8 +1,8 @@
 REACT_APP_WEBSITE_NAME=Cinema Listing App
-REACT_APP_API_ENPOINT=http://localhost:3001
+REACT_APP_API_ENPOINT=https://api.themoviedb.org
 REACT_APP_GA_TRACKING_ID=XX-XXXXXXX-X
 NODE_PATH=src/app
 REACT_APP_API_KEY=xxxxxxx
-REACT_APP_API_VERSION=x
+REACT_APP_API_VERSION=3
 REACT_APP_POSTER_PATH_VERTICAL=https://image.tmdb.org/t/p/w185_and_h278_bestv2
-REACT_APP_POSTER_PATH_HORIZONTAL=https://image.tmdb.org/t/p/w500_and_h281_bestv2
+REACT_APP_POSTER_PATH_HORIZONTAL=https://image.tmdb.org/t/p/w500_and_h282_bestv2
