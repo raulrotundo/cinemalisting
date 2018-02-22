@@ -15,7 +15,7 @@ const HomeComponent = (props) => {
     <div>
       <Segment
         inverted
-        style={{ minHeight: 420, paddingTop: 100 }}
+        style={{ minHeight: 350, paddingTop: 100 }}
       >
         <SliderTopContainer sliderData={highestRatedMovies} />
       </Segment>
